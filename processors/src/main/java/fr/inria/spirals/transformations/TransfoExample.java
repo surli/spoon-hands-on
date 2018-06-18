@@ -1,4 +1,4 @@
-package ow2con.transformations;
+package fr.inria.spirals.transformations;
 
 import spoon.Launcher;
 import spoon.reflect.declaration.CtClass;

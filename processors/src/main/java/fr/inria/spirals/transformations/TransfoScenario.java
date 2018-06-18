@@ -1,4 +1,4 @@
-package ow2con.transformations;
+package fr.inria.spirals.transformations;
 
 import spoon.MavenLauncher;
 import spoon.compiler.Environment;
@@ -29,7 +29,7 @@ public class TransfoScenario {
 
         CtModel model = launcher.buildModel();
         List<CtMethod> methodList = model.
-                filterChildren(new NamedElementFilter<CtPackage>(CtPackage.class, "ow2con")).
+                filterChildren(new NamedElementFilter<CtPackage>(CtPackage.class, "fr/inria/spirals")).
                 filterChildren(new NamedElementFilter<CtPackage>(CtPackage.class, "publicapi")).
                 filterChildren(new TypeFilter<CtMethod>(CtMethod.class)).
                 filterChildren(new Filter<CtMethod>() {

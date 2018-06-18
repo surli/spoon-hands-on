@@ -1,4 +1,4 @@
-package ow2con.processor;
+package fr.inria.spirals.processor;
 
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtBlock;

@@ -1,8 +1,7 @@
-package ow2con.queries;
+package fr.inria.spirals.queries;
 
 import spoon.MavenLauncher;
 import spoon.reflect.CtModel;
-import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtMethod;
 import spoon.reflect.declaration.CtPackage;
 import spoon.reflect.reference.CtTypeReference;
@@ -21,7 +20,7 @@ public class ScenarioQueries {
 
         CtModel model = launcher.buildModel();
         List<CtMethod> methodList = model.
-                filterChildren(new NamedElementFilter<CtPackage>(CtPackage.class, "ow2con")).
+                filterChildren(new NamedElementFilter<CtPackage>(CtPackage.class, "fr/inria/spirals")).
                 filterChildren(new NamedElementFilter<CtPackage>(CtPackage.class, "publicapi")).
                 filterChildren(new TypeFilter<CtMethod>(CtMethod.class)).
                 filterChildren(new Filter<CtMethod>() {

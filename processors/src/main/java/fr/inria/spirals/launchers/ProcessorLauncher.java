@@ -1,6 +1,6 @@
-package ow2con.launchers;
+package fr.inria.spirals.launchers;
 
-import ow2con.processor.APICheckingProcessor;
+import fr.inria.spirals.processor.APICheckingProcessor;
 import spoon.MavenLauncher;
 import spoon.compiler.Environment;
 

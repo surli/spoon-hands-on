@@ -1,7 +1,7 @@
-package ow2con.publicapi;
+package fr.inria.spirals.publicapi;
 
-import ow2con.privateapi.PrivateType;
-import ow2con.publicapi.subpack.TypePublic;
+import fr.inria.spirals.privateapi.PrivateType;
+import fr.inria.spirals.publicapi.subpack.TypePublic;
 
 public class MyPublicType {
     private PrivateType privateType;

@@ -1,4 +1,4 @@
-package ow2con.privateapi;
+package fr.inria.spirals.privateapi;
 
 public class PrivateType {
     int i = 0;

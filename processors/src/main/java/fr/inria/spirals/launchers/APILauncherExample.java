@@ -1,4 +1,4 @@
-package ow2con.launchers;
+package fr.inria.spirals.launchers;
 
 import spoon.Launcher;
 import spoon.reflect.CtModel;

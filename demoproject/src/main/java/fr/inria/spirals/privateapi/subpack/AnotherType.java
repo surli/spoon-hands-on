@@ -1,4 +1,4 @@
-package ow2con.privateapi.subpack;
+package fr.inria.spirals.privateapi.subpack;
 
 public class AnotherType {
 
