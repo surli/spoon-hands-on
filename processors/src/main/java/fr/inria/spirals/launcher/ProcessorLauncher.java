@@ -1,6 +1,6 @@
-package fr.inria.spirals.launchers;
+package fr.inria.spirals.launcher;
 
-import fr.inria.spirals.processor.APICheckingProcessor;
+import fr.inria.spirals.processor.DontReturnPrivateAPITypeProcessor;
 import spoon.MavenLauncher;
 import spoon.compiler.Environment;
 
@@ -14,7 +14,7 @@ public class ProcessorLauncher {
         environment.setCommentEnabled(true);
         environment.setAutoImports(true);
 
-        launcher.addProcessor(new APICheckingProcessor());
+        launcher.addProcessor(new DontReturnPrivateAPITypeProcessor());
         launcher.run();
     }
 }

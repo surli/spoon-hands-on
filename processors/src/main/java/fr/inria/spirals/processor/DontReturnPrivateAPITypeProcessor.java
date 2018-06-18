@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class APICheckingProcessor extends AbstractProcessor<CtMethod> {
-    private static final String PACKAGE_PUBLIC_API = "ow2con.publicapi";
-    private static final String PACKAGE_PRIVATE_API = "ow2con.privateapi";
-    private static final String EXCEPTION_FQN = "ow2con.PrivateAPIException";
+public class DontReturnPrivateAPITypeProcessor extends AbstractProcessor<CtMethod> {
+    private static final String PACKAGE_PUBLIC_API = "fr.inria.spirals.publicapi";
+    private static final String PACKAGE_PRIVATE_API = "fr.inria.spirals.privateapi";
+    private static final String EXCEPTION_FQN = "fr.inria.spirals.PrivateAPIException";
 
     @Override
     public boolean isToBeProcessed(CtMethod method) {
@@ -43,12 +43,12 @@ public class APICheckingProcessor extends AbstractProcessor<CtMethod> {
 
         CtBlock methodBody = method.getBody();
 
-        List<CtComment> bodyComments = new ArrayList<>();
-
         ArrayList<CtStatement> ctStatements = new ArrayList<>(methodBody.getStatements());
+
+        StringBuilder commentContent = new StringBuilder("\n");
         for (CtStatement ctStatement : ctStatements) {
-            String statement = ctStatement.toString();
-            bodyComments.add(factory.createInlineComment(statement));
+            commentContent.append(ctStatement.toString());
+            commentContent.append("\n");
             methodBody.removeStatement(ctStatement);
         }
 
@@ -59,10 +59,7 @@ public class APICheckingProcessor extends AbstractProcessor<CtMethod> {
         throwMyException.setThrownExpression(myNewException);
         methodBody.addStatement(throwMyException);
 
-        bodyComments.add(factory.createInlineComment("FIXME: The private API type should never be return in a public API."));
-
-        for (CtComment bodyComment : bodyComments) {
-            throwMyException.addComment(bodyComment);
-        }
+        throwMyException.addComment(factory.createComment(commentContent.toString(), CtComment.CommentType.BLOCK));
+        throwMyException.addComment(factory.createInlineComment("FIXME: The private API type should never be return in a public API."));
     }
 }

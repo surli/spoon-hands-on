@@ -7,14 +7,16 @@ public class LinearCounting {
     private SimpleCounter innerCounter;
 
     public LinearCounting() {
-        this.innerCounter = new SimpleCounter(0);
     }
 
     public int next() {
-        return this.innerCounter.nextNumber();
+        return this.getOrCreateInnerCounter().nextNumber();
     }
 
-    public SimpleCounter getInnerCounter() {
+    public SimpleCounter getOrCreateInnerCounter() {
+        if (this.innerCounter == null) {
+            this.innerCounter = new SimpleCounter(0);
+        }
         return this.innerCounter;
     }
 

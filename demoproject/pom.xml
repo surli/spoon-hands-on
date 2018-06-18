@@ -37,7 +37,7 @@
                     <withImports>true</withImports>
                     <processors>
                         <processor>
-                            fr.inria.spirals.processor.APICheckingProcessor
+                            fr.inria.spirals.processor.DontReturnPrivateAPITypeProcessor
                         </processor>
                     </processors>
                 </configuration>
