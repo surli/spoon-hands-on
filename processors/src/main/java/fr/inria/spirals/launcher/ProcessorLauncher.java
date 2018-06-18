@@ -1,6 +1,6 @@
 package fr.inria.spirals.launcher;
 
-import fr.inria.spirals.processor.DontReturnPrivateAPITypeProcessor;
+import fr.inria.spirals.processor.RenameLinearCountingProcessor;
 import spoon.MavenLauncher;
 import spoon.compiler.Environment;
 
@@ -14,7 +14,7 @@ public class ProcessorLauncher {
         environment.setCommentEnabled(true);
         environment.setAutoImports(true);
 
-        launcher.addProcessor(new DontReturnPrivateAPITypeProcessor());
+        launcher.addProcessor(new RenameLinearCountingProcessor());
         launcher.run();
     }
 }
