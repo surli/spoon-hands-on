@@ -14,7 +14,7 @@ public class ProcessorLauncher {
         environment.setCommentEnabled(true);
         environment.setAutoImports(true);
 
-        launcher.addProcessor(new RenameLinearCountingProcessor());
+        launcher.addProcessor(new RenameLinearCountingProcessor("LinearCounting", "LinearCounter"));
         launcher.run();
     }
 }
