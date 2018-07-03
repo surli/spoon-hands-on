@@ -1,7 +1,7 @@
 package fr.inria.spirals.publicapi;
 
 import fr.inria.spirals.privateapi.counters.ComplexCounter;
-import fr.inria.spirals.publicapi.utils.LinearCounting;
+import fr.inria.spirals.publicapi.utils.BadNameCounter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,18 +10,18 @@ import java.util.Date;
 import java.util.List;
 
 public class Store {
-    private LinearCounting linearCounting;
+    private BadNameCounter badNameCounter;
     private ComplexCounter complexCounter;
 
     public Store() {
-        this.linearCounting = new LinearCounting();
+        this.badNameCounter = new BadNameCounter();
         this.complexCounter = new ComplexCounter(new Date().getYear());
     }
 
     public List<Integer> getNInteger(int n) {
         List<Integer> result = new ArrayList<Integer>();
         for (int i = 0; i < n; i++) {
-            result.add(linearCounting.next());
+            result.add(badNameCounter.next());
         }
 
         return result;
@@ -36,12 +36,13 @@ public class Store {
     }
 
 
-    public LinearCounting getLinearCounting() {
-        return linearCounting;
+    public BadNameCounter getBadNameCounter() {
+        return badNameCounter;
     }
 
-    public void setLinearCounting(LinearCounting linearCounting) {
-        this.linearCounting = linearCounting;
+    public Store setBadNameCounter(BadNameCounter badNameCounter) {
+        this.badNameCounter = badNameCounter;
+        return this;
     }
 
     public ComplexCounter getComplexCounter() {

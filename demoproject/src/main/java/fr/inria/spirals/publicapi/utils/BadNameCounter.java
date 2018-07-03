@@ -3,10 +3,10 @@ package fr.inria.spirals.publicapi.utils;
 import fr.inria.spirals.privateapi.counters.SimpleCounter;
 import fr.inria.spirals.publicapi.Counter;
 
-public class LinearCounting {
+public class BadNameCounter {
     private SimpleCounter innerCounter;
 
-    public LinearCounting() {
+    public BadNameCounter() {
     }
 
     public int next() {
