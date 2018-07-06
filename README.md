@@ -47,3 +47,11 @@ It contains two packages:
   1. Rename `BadNameCounter` using `RenameLinearCountingProcessor`
   2. Create a processor to detect types of `privateapi` package that are available through `publicapi` package
   3. (if you still have time...) Create a processor to transform setters of `Store` to a builder pattern
+  
+## Use Spoon GUI to display the project
+
+You might want to use the Spoon GUI to display the model of the project. I provided the JAR of Spoon to be able to do that: 
+
+```bash
+java -jar spoon-core-7.0.0-jar-with-dependencies.jar -i demoproject/src/main/java/ -g
+```
