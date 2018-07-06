@@ -43,3 +43,7 @@ It contains two packages:
   - `launcher`: contains a class with a main method to show the usage of Spoon Launcher API with some option. It can be called directly to use the processors
   - `processor`: contains the code of different processors with different goals. New processors should be added as new classes.
   
+## Work to do
+  1. Rename `BadNameCounter` using `RenameLinearCountingProcessor`
+  2. Create a processor to detect types of `privateapi` package that are available through `publicapi` package
+  3. (if you still have time...) Create a processor to transform setters of `Store` to a builder pattern
